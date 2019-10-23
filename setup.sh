@@ -1,13 +1,12 @@
 #!/bin/bash
 
-dnf install -y make gcc compat-gcc-34-g77
+PROCHECK_ARCHIVE=${1}
+
+dnf install -y make gcc compat-gcc-34-g77 tcsh
 dnf clean all
 
-PROCHECK_ARCHIVE=${1}
-PARENT_DIR=$(dirname ${PROCHECK_ARCHIVE})
-
+cd /opt
 tar xf ${PROCHECK_ARCHIVE}
-cd /opt/
-tar xzf ${PARENT_DIR}/PROCHECK/procheck.tar.gz
+tar xzf PROCHECK/procheck.tar.gz
 cd procheck
 make cleanup && make all
