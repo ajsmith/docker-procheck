@@ -50,4 +50,4 @@ Alexander Smith
 
 # License
 
-Apache Public License 2.0z
+Apache Public License 2.0
